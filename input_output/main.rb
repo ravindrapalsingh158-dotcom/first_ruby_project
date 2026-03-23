@@ -1,17 +1,31 @@
-puts " please entre your name"
-name= gats.chomp
+puts " please enter your name"
+name= gets.chomp
 
 puts "please enter your price"
 price= gets.chomp.to_f
 
-puts "plese enter your quantity"
-quantity= get.champ.to_i
+puts "please enter your quantity"
+quantity= gets.chomp.to_i
 
 puts "is the item imported yes/no"
- imported= gets.chomp.downcae
+ imported= gets.chomp.downcase
  if imported == "yes"
-    improted = true
+    imported = true
  else
     imported=false
- end
- 
+ end 
+
+ item = Item.new(name, price , quantity , imported )
+
+ basket = Basket.new
+   basket.add_item(item)
+
+calculator = TaxCalculator.new(item)
+tax = calculator.total_tax
+    total_price = calculator.price_with_tax
+    puts "the total price for #{item.name} is #{total_price}"
+
+
+
+
+
