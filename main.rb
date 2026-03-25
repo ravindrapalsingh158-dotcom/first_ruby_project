@@ -23,7 +23,9 @@ loop do
   basket.add_item(item)
 
   tax = SalesTax::TaxCalculation.calculate(item)
-  total_price = item.price + tax
+total_price = (item.price + tax) * item.quantity
 
-  puts "the total price for #{item.name} is #{total_price}"
+puts "the total price for #{item.name} is #{total_price}"
+
+
 end
