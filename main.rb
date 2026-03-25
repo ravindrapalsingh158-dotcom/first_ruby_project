@@ -1,4 +1,8 @@
+require_relative 'input_output/item'
+require_relative 'input_output/basket'
+require_relative 'input_output/tax_calculator'
 
+ basket = SalesTax::Basket.new
 loop do
 puts "Please enter the item name:"
 name= gets.chomp
